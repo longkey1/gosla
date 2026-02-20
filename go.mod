@@ -1,4 +1,4 @@
-module github.com/longkey1/slago
+module github.com/longkey1/gosla
 
 go 1.25
 

@@ -1,4 +1,4 @@
-# slago
+# gosla
 
 Slack Log Collector CLI - A command-line tool for collecting Slack messages
 
@@ -6,13 +6,13 @@ Slack Log Collector CLI - A command-line tool for collecting Slack messages
 
 ### Download from Releases
 
-Download the binary from [Releases](https://github.com/longkey1/slago/releases).
+Download the binary from [Releases](https://github.com/longkey1/gosla/releases).
 
 ### Build from Source
 
 ```bash
-git clone https://github.com/longkey1/slago.git
-cd slago
+git clone https://github.com/longkey1/gosla.git
+cd gosla
 make build
 ```
 
@@ -34,10 +34,10 @@ Fetch a single message or thread from a Slack URL.
 
 ```bash
 # Fetch a single message
-slago get "https://xxx.slack.com/archives/C123/p456"
+gosla get "https://xxx.slack.com/archives/C123/p456"
 
 # Fetch the entire thread
-slago get "https://xxx.slack.com/archives/C123/p456" --thread
+gosla get "https://xxx.slack.com/archives/C123/p456" --thread
 ```
 
 #### list
@@ -46,25 +46,25 @@ Collect messages for a date range and save to files.
 
 ```bash
 # Collect messages for a specific day
-slago list --day 2025-01-15
+gosla list --day 2025-01-15
 
 # Collect messages for an entire month
-slago list --month 2025-01
+gosla list --month 2025-01
 
 # Collect messages for a custom date range
-slago list --from 2025-01-01 --to 2025-01-15
+gosla list --from 2025-01-01 --to 2025-01-15
 
 # Combine options
-slago list -m 2025-01 --thread --author U12345678
-slago list -d 2025-01-15 --mention U111 --mention @john.doe --mention @team
+gosla list -m 2025-01 --thread --author U12345678
+gosla list -d 2025-01-15 --mention U111 --mention @john.doe --mention @team
 
 # Filter by channels
-slago list -m 2025-01 --channel general --channel random
-slago list -d 2025-01-15 --exclude-channel announcements
-slago list -m 2025-01 --channel general,random --exclude-channel bot-logs
+gosla list -m 2025-01 --channel general --channel random
+gosla list -d 2025-01-15 --exclude-channel announcements
+gosla list -m 2025-01 --channel general,random --exclude-channel bot-logs
 
 # Parallel execution
-slago list -m 2025-01 --parallel 4
+gosla list -m 2025-01 --parallel 4
 ```
 
 Output is saved to `logs/YYYY/MM/DD/slack.json`.
@@ -75,18 +75,18 @@ Merge multiple JSON files and deduplicate threads/messages.
 
 ```bash
 # Merge all JSON files in a directory
-slago merge ./logs
+gosla merge ./logs
 
 # With explicit --dir flag
-slago merge --dir ./logs
+gosla merge --dir ./logs
 
 # Filter by file pattern
-slago merge ./logs --pattern "slack*.json"
-slago merge ./logs -p "2025-*.json"
+gosla merge ./logs --pattern "slack*.json"
+gosla merge ./logs -p "2025-*.json"
 
 # Recursive search (include subdirectories)
-slago merge ./logs --recursive
-slago merge ./logs -r -p "*.json"
+gosla merge ./logs --recursive
+gosla merge ./logs -r -p "*.json"
 ```
 
 Output is written to stdout.
@@ -94,7 +94,7 @@ Output is written to stdout.
 #### version
 
 ```bash
-slago version
+gosla version
 ```
 
 ### Global Flags
@@ -155,7 +155,7 @@ Output is in JSON format, grouped by thread.
 
 **Note:** The output structure is not the raw Slack API response. Messages are transformed into a simplified, consistent format:
 
-| slago field | Source |
+| gosla field | Source |
 |-------------|--------|
 | `id` | Message timestamp (`ts`) |
 | `content` | Message text |

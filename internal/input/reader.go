@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/longkey1/slago/internal/model"
+	"github.com/longkey1/gosla/internal/model"
 )
 
 // FileReader reads Thread arrays from JSON files

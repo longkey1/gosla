@@ -9,9 +9,9 @@ var token string
 // NewRootCmd creates the root command
 func NewRootCmd() *cobra.Command {
 	rootCmd := &cobra.Command{
-		Use:   "slago",
+		Use:   "gosla",
 		Short: "Slack Log Collector CLI",
-		Long: `slago is a CLI tool for collecting Slack messages.
+		Long: `gosla is a CLI tool for collecting Slack messages.
 
 It supports:
   - Fetching messages by URL

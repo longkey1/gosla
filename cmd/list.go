@@ -5,11 +5,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/longkey1/slago/internal/collector"
-	"github.com/longkey1/slago/internal/config"
-	"github.com/longkey1/slago/internal/output"
-	"github.com/longkey1/slago/internal/slack"
-	"github.com/longkey1/slago/internal/dateutil"
+	"github.com/longkey1/gosla/internal/collector"
+	"github.com/longkey1/gosla/internal/config"
+	"github.com/longkey1/gosla/internal/dateutil"
+	"github.com/longkey1/gosla/internal/output"
+	"github.com/longkey1/gosla/internal/slack"
 	"github.com/spf13/cobra"
 )
 
@@ -40,13 +40,13 @@ Date range options (mutually exclusive):
   --from/--to Custom range (both required)
 
 Examples:
-  slago list --day 2025-01-15
-  slago list --month 2025-01
-  slago list --from 2025-01-01 --to 2025-01-15
-  slago list -m 2025-01 --thread --author U12345678
-  slago list -d 2025-01-15 --mention U111 --mention @team
-  slago list -m 2025-01 --channel general --channel random
-  slago list -d 2025-01-15 --exclude-channel announcements`,
+  gosla list --day 2025-01-15
+  gosla list --month 2025-01
+  gosla list --from 2025-01-01 --to 2025-01-15
+  gosla list -m 2025-01 --thread --author U12345678
+  gosla list -d 2025-01-15 --mention U111 --mention @team
+  gosla list -m 2025-01 --channel general --channel random
+  gosla list -d 2025-01-15 --exclude-channel announcements`,
 		RunE: runList,
 	}
 

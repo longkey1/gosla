@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"github.com/longkey1/slago/cmd"
-	"github.com/longkey1/slago/internal/version"
+	"github.com/longkey1/gosla/cmd"
+	"github.com/longkey1/gosla/internal/version"
 )
 
 // Version information (set by ldflags)
